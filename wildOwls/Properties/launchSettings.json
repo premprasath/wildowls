@@ -18,7 +18,10 @@
   },
   "profiles": {
     "WildOwls": {
-      "commandName": "IISExpress"
+      "commandName": "IISExpress",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
     },
     "IIS Express": {
       "commandName": "IISExpress",
