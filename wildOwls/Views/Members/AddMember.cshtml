@@ -1,0 +1,63 @@
+﻿@model WildOwls.Model.MemberInfo
+
+@{
+    ViewData["Title"] = "Add/Update-Doctor";
+}
+@section scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+<div class="form-group col-md-12 text-danger" style="width:100%; text-align: center; word-break: break-word;">
+    <div id="errorId">
+        <h6>@Html.Raw(ViewBag.MessageId)</h6>
+    </div>
+    <div id="errorMessage">
+        <h5>@ViewBag.Error</h5>
+    </div>
+</div>
+@if (Model.MemberId != "")
+{
+    <h2>Update Doctor Details</h2>
+}
+else
+{
+    <h2>Add Doctor</h2>
+}
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form id="AddDoctor" asp-controller="Member" asp-action="AddMember" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @if (Model.MemberId != "")
+            {
+                <div class="form-group">
+                    <label asp-for="MemberId" class="control-label"></label>
+                    <input asp-for="MemberId" class="form-control" disabled />
+                </div>
+            }
+            @*<input type="hidden" asp-for="DoctorID" />*@
+            <div class="form-group">
+                <label asp-for="MemberName" class="control-label"></label>
+                <input asp-for="MemberName" class="form-control" />
+            </div>
+            
+            <div class="form-group pt-2">
+
+                @if (Model.MemberId != "")
+                {
+                    <button type="button" class="btn btn-primary btn-sm col-6 vital-form-btn" onclick="PreSave()">Update Member</button>
+                    <input type="submit" id="btnSubmitInfo" value="Update Doctor" class="btn btn-primary hide" />
+                }
+                else
+                {
+                    <button type="button" class="btn btn-primary btn-sm col-6 vital-form-btn" onclick="PreSave()">Add Member</button>
+                    <input type="submit" id="btnSubmitInfo" value="Add Doctor" class="btn btn-primary hide" />
+                }
+            </div>
+        </form>
+    </div>
+</div>
+<div class="pb-2">
+    <a asp-action="Index">Back to List</a>
+</div>
+

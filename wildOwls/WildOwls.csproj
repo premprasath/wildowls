@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\NamathuKudumbam.jpg" />
+    <None Include="wwwroot\owl3.mp4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WildOwl.Domain\WildOwl.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Images\" />
+    <Folder Include="Videos\" />
+  </ItemGroup>
+
+</Project>

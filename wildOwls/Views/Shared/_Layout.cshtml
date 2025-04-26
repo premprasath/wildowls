@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WildOwls</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script type="text/javascript">
+        var baseUrl = "@Url.Content("~/")";
+    </script>
+</head>
+<body>
+    <header class="bg-white border-bottom box-shadow">
+        <div class="container">
+            <div class="row" style="display:flow-root;">
+                <div class="col-md-6 col-7" style="float:left;">
+                    <div class="pt-2" style="font-family: sans-serif; font-weight: bold; color: #4f4f4f; font-size: 17px;">
+                        WildOwls
+                    </div>
+
+                </div>
+                <div class="col-md-2 col-5" style="float:right;">
+                    <a class="nav-link text-dark float-left font-weight-bold font-family-ssm" style="cursor:pointer" onclick="callHelp();">Help</a>
+                    <a id="btnLogout" class="nav-link text-dark float-left font-weight-bold font-family-ssm" style="cursor:pointer">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - WildOwls - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
